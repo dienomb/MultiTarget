@@ -7,8 +7,8 @@ namespace ConsoleNet451
     {
         static void Main(string[] args)
         {
-            IHello hi = HelloFactory.GetThisPartyStarted();
-            Console.WriteLine(hi.SayHello());
+            IHello hi = HelloFactory.GetThisPartyStarted("text");
+            Console.WriteLine(hi.SayHello(5));
             Console.ReadKey();
         }
     }

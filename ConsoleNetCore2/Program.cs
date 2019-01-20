@@ -7,8 +7,8 @@ namespace ConsoleNetCore2
     {
         static void Main(string[] args)
         {
-            IHello hi = HelloFactory.GetThisPartyStarted();
-            Console.WriteLine(hi.SayHello());
+            IHello hi = HelloFactory.GetThisPartyStarted(1);
+            Console.WriteLine(hi.SayHello("hola"));
             Console.ReadKey();
         }
     }

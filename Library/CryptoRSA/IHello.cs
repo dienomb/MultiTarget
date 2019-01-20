@@ -6,6 +6,11 @@ namespace Library
 {
     public interface IHello
     {
-        string SayHello();
+#if NETSTANDARD
+        string SayHello(string mess);
+#endif
+#if NETFRAMEWORK
+        int SayHello(int number);
+#endif
     }
 }

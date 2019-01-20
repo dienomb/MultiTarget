@@ -1,35 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net451</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net451;net40</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>NETSTANDARD</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net451'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net451' or '$(TargetFramework)' == 'net40'">
     <DefineConstants>NETFRAMEWORK</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="BuildTargets\**\*.*" />
-    <None Include="BuildTargets\**\*.*" />
+    <Compile Remove="CryptoRSA\BuildTargets\**\*.*" />
+    <None Include="CryptoRSA\BuildTargets\**\*.*" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <Folder Include="\netstandard2_0\" />
-    <Compile Include="BuildTargets\netstandard2_0\*.cs" />
+    <Compile Include="CryptoRSA\BuildTargets\netstandard2_0\*.cs" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net451'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net451' or '$(TargetFramework)' == 'net40'">
     <Folder Include="\net451\" />
-    <Compile Include="BuildTargets\net451\*.cs" />
+    <Compile Include="CryptoRSA\BuildTargets\net451\*.cs" />
     <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="IHello.cs" />
   </ItemGroup>
 
 </Project>
