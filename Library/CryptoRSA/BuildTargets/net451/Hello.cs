@@ -1,5 +1,7 @@
 ﻿// .NET Framework 4.5.1 implementation
 using System;
+using System.Configuration;
+
 namespace Library
 {
     public class Hello : IHello
@@ -17,6 +19,7 @@ namespace Library
 
         public int SayHello(int number)
         {
+            string strVal = ConfigurationManager.AppSettings["serviceUrl"];
             return number;
         }
     }

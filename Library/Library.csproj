@@ -20,12 +20,21 @@
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <Folder Include="\netstandard2_0\" />
     <Compile Include="CryptoRSA\BuildTargets\netstandard2_0\*.cs" />
+    <PackageReference Include="Microsoft.Extensions.Configuration">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>4.5.0</Version>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net451' or '$(TargetFramework)' == 'net40'">
     <Folder Include="\net451\" />
     <Compile Include="CryptoRSA\BuildTargets\net451\*.cs" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
   </ItemGroup>
-
 </Project>
